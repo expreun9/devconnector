@@ -35,6 +35,7 @@ app.use('/api/users', users);
 app.use('/api/profile', profile);
 app.use('/api/posts', posts);
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000; // If I get Erro: listen EADDRINUSE :::3000 run
+// ~> sudo kill `sudo lsof -t -i:9001`
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
