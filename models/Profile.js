@@ -1,5 +1,5 @@
-const mongoose = require('mongoos');
-const Schema = mongoos.Schema;
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 // Create Schema
 const ProfileShema = new Schema({
@@ -117,4 +117,4 @@ const ProfileShema = new Schema({
   }
 });
 
-module.exports = Profile = mongoos.model('profile', ProfileShema);
+module.exports = Profile = mongoose.model('profile', ProfileShema);
