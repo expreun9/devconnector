@@ -37,5 +37,7 @@ app.use('/api/posts', posts);
 
 const port = process.env.PORT || 3000; // If I get Erro: listen EADDRINUSE :::3000 run
 // ~> sudo kill `sudo lsof -t -i:9001`
+// to prevent this error close the app with 'Ctrl - c' not 'Ctrl - z'
+// since 'Ctrl - c' sends the SIGINT signal
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
