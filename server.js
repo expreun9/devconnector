@@ -20,7 +20,9 @@ const db = require('./config/keys').mongoURI;
 
 // Connect to MongoDB
 mongoose
-  .connect(db)
+  .connect(db, {
+    useNewUrlParser: true
+  })
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err));
 
@@ -35,7 +37,7 @@ app.use('/api/users', users);
 app.use('/api/profile', profile);
 app.use('/api/posts', posts);
 
-const port = process.env.PORT || 3000; // If I get Erro: listen EADDRINUSE :::3000 run
+const port = process.env.PORT || 5000; // If I get Erro: listen EADDRINUSE :::5000 run
 // ~> sudo kill `sudo lsof -t -i:9001`
 // to prevent this error close the app with 'Ctrl - c' not 'Ctrl - z'
 // since 'Ctrl - c' sends the SIGINT signal
